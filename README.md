@@ -1,2 +1,6 @@
-# Description:
-Daily Devotional is a website designed to inspire holy envy within you. Every day you will be presented with a different spiritual message from a religion picked from your preselected list, exposing you to the good and truth found in religions from around the world. 
+# Startup
+## Description:
+Daily Devotional is a website designed to inspire holy envy within you. Every day you will be presented with a different spiritual message from a religion picked from your preselected list, exposing you to the good and truth found in religions from around the world. From these messages you will gain an inscreased understanding and love for other faiths and grow a deeper connection to your own.
+
+## Design:
+Daily Devotional will have a list of all of the religions that it offers info from so that you can learn about them. You will need to login in order for your choices of religions to stay (authentication), you'll need to choose religions to recieve devotionals from (stored data), it will have a help/chat feature (sending to and from with web sockets), the daily devotional itself will be from a websource.
