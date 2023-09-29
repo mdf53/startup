@@ -23,6 +23,18 @@ I am going to use the required technologies in the following ways.
     Login - Register and login users. Credentials securely stored in database. Can't choose which religions you'd like to see if not authenticated.
     WebSocket - Chat/support feature.
     React - Application ported to use the React web framework.
+    
+## HTML Deliverable
+For this deliverable I built out the structure of my application using HTML.
+
+    HTML pages - Four HTML pages: home page, about, info on religions with links to their websites, the daily devotional
+    Links - Links between pages and to the sits on the religions
+    Text - Descriptions on different things
+    Images - Symbols for some of the religions
+    Login - Input box and submit button for login.
+    Database - Scriptures/Quotes pulled from databases
+    WebSocket - Online chat/support feature
+
 
 
 ## Accessing the server:
