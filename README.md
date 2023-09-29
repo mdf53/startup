@@ -35,6 +35,15 @@ For this deliverable I built out the structure of my application using HTML.
     Database - Scriptures/Quotes pulled from databases
     WebSocket - Online chat/support feature
 
+## WebSocket Data
+Currently the placeholder is the button found at the bottom of each page titled Live Help Support
+
+## Third Party Service Calls
+Placeholder is found on the devotional page. The scripture will be pulled from 3rd party service calls.
+
+## Database data
+Found on the religions tab. Check boxes for which religions they want to see devotionals from.
+
 
 
 ## Accessing the server:
