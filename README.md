@@ -9,6 +9,34 @@ Daily Devotional will have a list of all of the religions that it offers info fr
 
 ![image](https://github.com/mdf53/startup/assets/102641657/434e3bf2-3897-4a5c-a4e2-5bfcc0bfc513)
 
+## Using Required Technologies:
+I am going to use the required technologies in the following ways.
+
+    HTML - Uses correct HTML structure for application. Four HTML pages: home page, about, info on religions with links to their websites, the daily devotional
+    CSS - Making the website look good
+    JavaScript - Provides login, ability to choose which religions you want to see, implementing chat/support feature.
+    Service - Backend service with endpoints for:
+        login
+        retrieving choices
+        getting devotional
+    DB - Store users and thier religion choices
+    Login - Register and login users. Credentials securely stored in database. Can't choose which religions you'd like to see if not authenticated.
+    WebSocket - Chat/support feature.
+    React - Application ported to use the React web framework.
+    
+## HTML Deliverable
+For this deliverable I built out the structure of my application using HTML.
+
+    HTML pages - Four HTML pages: home page, about, info on religions with links to their websites, the daily devotional
+    Links - Links between pages and to the sits on the religions
+    Text - Descriptions on different things
+    Images - Symbols for some of the religions
+    Login - Input box and submit button for login.
+    Database - Scriptures/Quotes pulled from databases
+    WebSocket - Online chat/support feature
+
+
+
 ## Accessing the server:
 IP address: 3.218.16.7
 Command line argument to access server: 
