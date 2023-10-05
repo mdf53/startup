@@ -1,0 +1,13 @@
+/* * {
+    text-align: center;
+    font-family: sans-serif;
+    color: rgb(0, 0, 0);
+    box-sizing: border-box;
+  } */
+  header {
+    flex: 0 80px;
+  }
+title{
+    color:blue;
+    background-color: red;
+}
