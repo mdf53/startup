@@ -3,11 +3,16 @@
     font-family: sans-serif;
     color: rgb(0, 0, 0);
     box-sizing: border-box;
+    asdfasdf
   } */
   header {
     flex: 0 80px;
   }
-title{
+header{
     color:blue;
-    background-color: red;
+    background-color: rgb(87, 205, 195);
+    
+}
+h1{
+  color: white;
 }
