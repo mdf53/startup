@@ -1,67 +1,50 @@
-/* 
-    Add in a box around tthe diffent options.
-    Stylize the links for learning about the individual religions.
-*/
-section{
-    text-decoration:  none;
-}
-fieldset input[type="checkbox"] {
-    border: 2px solid #333;
-    padding: 5px;
-    margin: 5px;
-  }
-  
-  /* Stylize the links for learning about individual religions */
-  fieldset a {
-    text-decoration: none; /* Remove underline from links */
-    color: #0077b6; /* Change link color to your preference */
-  }
-  
-  /* Hover effect for the links */
-  fieldset a:hover {
-    text-decoration: underline; /* Add underline on hover */
-  }
+/* Body styles */
 body {
     display: flex;
     flex-direction: column;
     min-width: 375px;
   }
   
+  /* Header styles */
   header {
     flex: 0 80px;
-    color:blue;
+    color: blue;
     background-color: darkslategrey;
-    
   }
   
+  /* Main content styles */
   main {
     flex: 1 calc(100vh - 110px);
     display: flex;
     flex-direction: column;
+    align-items: left;
     justify-content: space-around;
-    background-color: rgb(87, 205, 195);
+    background-color: antiquewhite;
   }
   
+  /* Footer styles */
   footer {
     flex: 0 30px;
     color: blanchedalmond;
     background-color: darkslategrey;
     text-align: left;
   }
-
-  h1{
+  
+  /* h1 styles */
+  h1 {
     color: blanchedalmond;
   }
-
-  button{
+  
+  /* Button styles */
+  button {
     color: black;
     background-color: blanchedalmond;
   }
-
+  
+  /* Menu styles */
   menu {
     flex: 1;
     display: flex;
-    /*  overwrite Bootstrap so the menu does not wrap */
     flex-direction: row !important;
     list-style: none;
   }
@@ -75,7 +58,25 @@ body {
     padding: 0 0.3em;
   }
   
+  /* Add a border around checkboxes within the fieldset */
+  fieldset input[type="checkbox"] {
+    border: 2px solid #333;
+    padding: 5px;
+    margin: 5px;
+  }
   
+  /* Stylize the links for learning about individual religions */
+  fieldset a {
+    text-decoration: none;
+    color: #0077b6;
+  }
+  
+  /* Hover effect for the links */
+  fieldset a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Media query for smaller screens */
   @media (max-height: 600px) {
     header {
       display: none;
