@@ -1,0 +1,90 @@
+/* 
+    Add in a box around tthe diffent options.
+    Stylize the links for learning about the individual religions.
+*/
+section{
+    text-decoration:  none;
+}
+fieldset input[type="checkbox"] {
+    border: 2px solid #333;
+    padding: 5px;
+    margin: 5px;
+  }
+  
+  /* Stylize the links for learning about individual religions */
+  fieldset a {
+    text-decoration: none; /* Remove underline from links */
+    color: #0077b6; /* Change link color to your preference */
+  }
+  
+  /* Hover effect for the links */
+  fieldset a:hover {
+    text-decoration: underline; /* Add underline on hover */
+  }
+body {
+    display: flex;
+    flex-direction: column;
+    min-width: 375px;
+  }
+  
+  header {
+    flex: 0 80px;
+    color:blue;
+    background-color: darkslategrey;
+    
+  }
+  
+  main {
+    flex: 1 calc(100vh - 110px);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    background-color: rgb(87, 205, 195);
+  }
+  
+  footer {
+    flex: 0 30px;
+    color: blanchedalmond;
+    background-color: darkslategrey;
+    text-align: left;
+  }
+
+  h1{
+    color: blanchedalmond;
+  }
+
+  button{
+    color: black;
+    background-color: blanchedalmond;
+  }
+
+  menu {
+    flex: 1;
+    display: flex;
+    /*  overwrite Bootstrap so the menu does not wrap */
+    flex-direction: row !important;
+    list-style: none;
+  }
+  
+  .navbar-brand {
+    padding-left: 0.3em;
+    border-bottom: solid rgb(182, 182, 182) thin;
+  }
+  
+  menu .nav-item {
+    padding: 0 0.3em;
+  }
+  
+  
+  @media (max-height: 600px) {
+    header {
+      display: none;
+    }
+    footer {
+      display: none;
+    }
+    main {
+      flex: 1 100vh;
+    }
+  }
+  

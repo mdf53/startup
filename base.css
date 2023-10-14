@@ -21,7 +21,8 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
-    background-color: rgb(87, 205, 195);
+    /* background-color: rgb(87, 205, 195); */
+    background-color: ;
   }
   
   footer {
@@ -39,6 +40,96 @@ body {
     color: black;
     background-color: blanchedalmond;
   }
+/* Body styles */
+body {
+  display: flex;
+  flex-direction: column;
+  min-width: 375px;
+}
+
+/* Header styles */
+header {
+  flex: 0 80px;
+  color: blue;
+  background-color: darkslategrey;
+}
+
+/* Main content styles */
+main {
+  flex: 1 calc(100vh - 110px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  background-color: antiquewhite;
+}
+
+/* Footer styles */
+footer {
+  flex: 0 30px;
+  color: blanchedalmond;
+  background-color: darkslategrey;
+  text-align: left;
+}
+
+/* h1 styles */
+h1 {
+  color: blanchedalmond;
+}
+
+/* Button styles */
+button {
+  color: black;
+  background-color: blanchedalmond;
+}
+
+/* Menu styles */
+menu {
+  flex: 1;
+  display: flex;
+  flex-direction: row !important;
+  list-style: none;
+}
+
+.navbar-brand {
+  padding-left: 0.3em;
+  border-bottom: solid rgb(182, 182, 182) thin;
+}
+
+menu .nav-item {
+  padding: 0 0.3em;
+}
+
+/* Add a border around checkboxes within the fieldset */
+fieldset input[type="checkbox"] {
+  border: 2px solid #333;
+  padding: 5px;
+  margin: 5px;
+}
+
+/* Stylize the links for learning about individual religions */
+fieldset a {
+  text-decoration: none;
+  color: #0077b6;
+}
+
+/* Hover effect for the links */
+fieldset a:hover {
+  text-decoration: underline;
+}
+
+/* Media query for smaller screens */
+@media (max-height: 600px) {
+  header {
+    display: none;
+  }
+  footer {
+    display: none;
+  }
+  main {
+    flex: 1 100vh;
+  }
+}
 
   menu {
     flex: 1;
