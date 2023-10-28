@@ -1,3 +1,4 @@
+
 //Add the ability to save Which religions you want to see
 // Function to save the checkbox state in local storage
 function saveCheckboxState(checkboxId) {
@@ -16,9 +17,9 @@ function loadCheckboxState(checkboxId) {
         checkbox.checked = false;
     }
 }
+const checkboxes = document.querySelectorAll('input[type="checkbox"]');
 
 // Attach event listeners to the checkboxes
-const checkboxes = document.querySelectorAll('input[type="checkbox"]');
 checkboxes.forEach((checkbox) => {
     checkbox.addEventListener('change', function() {
         saveCheckboxState(checkbox.id);
@@ -29,3 +30,5 @@ checkboxes.forEach((checkbox) => {
 checkboxes.forEach((checkbox) => {
     loadCheckboxState(checkbox.id);
 });
+
+// export {checkboxes};
