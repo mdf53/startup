@@ -5,7 +5,7 @@ const dailyContent = [
         citation: "1 Nephi 3:7"
     },
     {
-      quote: "Let all your things be done with charityQuote for Day 1",
+      quote: "Let all your things be done with charity",
       citation: "1 Corinthians 16:14"
     },
     
@@ -15,7 +15,9 @@ const dailyContent = [
     }
     // Add objects for subsequent days here
   ];
+
   function updateDailyText() {
+    console.log("Function called");
 // Get the current date
     const currentDate = new Date();
     
@@ -30,10 +32,10 @@ const dailyContent = [
     const todayCitation = dailyContent[dayIndex].citation;
 
     // Determine the index of the daily text based on the day of the year
-    const textIndex = dayOfYear % dailyTexts.length;
+    const textIndex = dayOfYear % dailyContent.length;
 
     // Get today's text
-    const todayText = dailyTexts[textIndex];
+    const todayText = dailyContent[textIndex];
 
     document.getElementById("quote").textContent = todayQuote;
     document.getElementById("citation").textContent = `- ${todayCitation}`;
