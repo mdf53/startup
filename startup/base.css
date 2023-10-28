@@ -16,7 +16,7 @@ body {
   }
   
   main {
-    flex: 1 calc(100vh - 110px);
+    flex: 1 calc(100vh - 220px);
     display: flex;
     flex-direction: column;
     align-items: center;
