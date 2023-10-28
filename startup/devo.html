@@ -1,17 +1,19 @@
-<body>
+<html>
   <head>
-    <link rel="stylesheet" href ="devo.css">
-    <link rel="stylesheet" href ="base.css">
+  <link rel="stylesheet" href ="devo.css">
+  <link rel="stylesheet" href ="base.css">
 
-    <title>Today's Devotional</title>
-    <!-- Include bootstrap CSS framework -->
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
-      crossorigin="anonymous"
-    />
-  </head>
+  <title>Today's Devotional</title>
+  <!-- Include bootstrap CSS framework -->
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+    integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
+    crossorigin="anonymous"
+  />
+</head>
+<body>
+  
 <header>
     <h1>Daily Devotinoal<sup>&reg;</sup></h1>
 
@@ -37,10 +39,11 @@
     <p>Today's devotional is from: Christianity - The Bible</p>
     <div id="picture" class="picture-box"><img width="400px" src="christianity.png" alt="today's religion" /></div>
     <br />
-    <div id="quote">
-        <div>Let all your things be done with charity</div>
-        <div>1 Corinthians 16:14</div>
+    <div id="dailyText">
+      <p id="quote">Today's quote will appear here.</p>
+      <p id="citation">- Author</p>
     </div>
+    
 
 </main>
 <footer>
@@ -52,4 +55,11 @@
     <button type="submit">Live Help Support</button>
   </footer>
 
+  <script src="devo.js"></script>
+  <script>
+    // Call the updateDailyText function initially when the page loads
+    window.addEventListener('load', updateDailyText);
+  </script>
+  
 </body>
+</html>
