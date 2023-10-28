@@ -52,10 +52,14 @@
     <br />
     <a href="https://github.com/mdf53/startup.git">GitHub</a>
     <br />
-    <button type="submit">Live Help Support</button>
+    <button id="liveHelpButton">Live Help Support</button>    <div id="chatBox" style="display: none">
+      <!-- Chat box content goes here -->
+  </div>
+  
   </footer>
 
   <script src="devo.js"></script>
+  <script src="help.js"></script>
   <script>
     // Call the updateDailyText function initially when the page loads
     window.addEventListener('load', updateDailyText);
