@@ -21,7 +21,9 @@ What does the following code using map with an array output?
         Applies a function to each element of an array, adding them to a new array. Ex from chat: const doubledNumbers = numbers.map(function (number) {
   return number * 2;
 });
+
 What does the following code output using getElementByID and addEventListener?
+
 What does the following line of Javascript do using a # selector?
 Which of the following are true? (mark all that are true about the DOM)
 By default, the HTML span element has a default CSS display property value of: 
