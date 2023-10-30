@@ -14,6 +14,7 @@ You pull using GIT Bash, not VS Code.
     Given this HTML and this CSS how will the images be displayed using flex?
       Flex allows the elements to change with the size of the page.
     What does the following padding CSS do?
+        
     What does the following code using arrow syntax function declaration do?
     What does the following code using map with an array output?
     What does the following code output using getElementByID and addEventListener?
