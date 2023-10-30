@@ -10,6 +10,8 @@ In the following code,  what does a div tag do?
       Defines a division or section in an HTML document.
       
 In the following code, what is the difference between the #title and .grid selector?
+      # is an id selector. Only one element can have a particular id. 
+      . is a class identifier. Multiple elements can share the same class. 
       
 In the following code, what is the difference between padding and margin?
       Padding represents the amount of inner space an element has, while the margin is whitespace available surrounding an element.
@@ -28,10 +30,40 @@ What does the following code using map with an array output?
 });
 
 What does the following code output using getElementByID and addEventListener?
+  
 
 What does the following line of Javascript do using a # selector?
+  '#' is a type identifier, so it will affect the singular item with that id.
 
 Which of the following are true? (mark all that are true about the DOM)
+   DOM: Document Object Model. represents web page as tree-like structure of objects, where each object corresponds to an element in the web page, such as HTML tags, attributes and text content.
+   Tree Structure:
+   
+    The DOM represents the web page's structure as a hierarchical tree, with the root of the tree being the <html> element. Below that, you have the <head> and <body> elements, and within those, you have various other elements such as headings, paragraphs, links, images, and more.
+   Nodes:
+
+    The elements, attributes, and text content in the DOM are represented as nodes. Nodes can be of several types, including element nodes, attribute nodes, and text nodes.
+    Element nodes represent HTML elements, such as <div>, <p>, or <a>.
+    Attribute nodes represent attributes of elements, such as the "src" attribute of an <img> element.
+    Text nodes represent the actual text content within elements.
+
+Accessing and Manipulating the DOM:
+
+    Web developers can use programming languages like JavaScript to access and manipulate the DOM. This enables dynamic behavior on web pages.
+    Common operations include selecting elements, changing their content or attributes, adding or removing elements, and responding to user interactions (e.g., clicking a button to change text on a page).
+
+Event Handling:
+
+    The DOM allows developers to register event listeners on DOM elements to respond to user interactions, such as clicks, mouse movements, and keyboard input. Event handling is a crucial aspect of creating interactive web pages.
+
+Cross-Browser Compatibility:
+
+    The DOM is designed to be a platform-independent and language-neutral interface, making it compatible with various web browsers. However, there can be some browser-specific differences in how the DOM is implemented, so developers often use libraries like jQuery to smooth out these differences.
+
+Dynamic Web Pages:
+
+    By manipulating the DOM, web developers can create dynamic and interactive web pages. This is the foundation for many modern web applications, which use JavaScript to update the DOM in response to user actions or data changes.
+   
 By default, the HTML span element has a default CSS display property value of: 
 How would you use CSS to change all the div elements to have a background color of red?
 How would you display an image with a hyperlink in HTML?
