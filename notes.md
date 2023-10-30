@@ -5,18 +5,23 @@ You pull using GIT Bash, not VS Code.
 
  In the following code, what does the link element do
       Adds a link to another file or website.
-    In the following code,  what does a div tag do?
+      
+In the following code,  what does a div tag do?
       Defines a division or section in an HTML document.
-    In the following code, what is the difference between the #title and .grid selector?
+      
+In the following code, what is the difference between the #title and .grid selector?
       
 In the following code, what is the difference between padding and margin?
       Padding represents the amount of inner space an element has, while the margin is whitespace available surrounding an element.
-    Given this HTML and this CSS how will the images be displayed using flex?
+      
+Given this HTML and this CSS how will the images be displayed using flex?
       Flex allows the elements to change with the size of the page.
-    What does the following padding CSS do?
+    
+What does the following padding CSS do?
         
 What does the following code using arrow syntax function declaration do?
         shorter way of riding function. object = function parameters => {function}
+
 What does the following code using map with an array output?
         Applies a function to each element of an array, adding them to a new array. Ex from chat: const doubledNumbers = numbers.map(function (number) {
   return number * 2;
@@ -25,6 +30,7 @@ What does the following code using map with an array output?
 What does the following code output using getElementByID and addEventListener?
 
 What does the following line of Javascript do using a # selector?
+
 Which of the following are true? (mark all that are true about the DOM)
 By default, the HTML span element has a default CSS display property value of: 
 How would you use CSS to change all the div elements to have a background color of red?
