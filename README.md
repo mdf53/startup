@@ -10,7 +10,13 @@ Daily Devotional will have a list of all of the religions that it offers info fr
 ![image](https://github.com/mdf53/startup/assets/102641657/434e3bf2-3897-4a5c-a4e2-5bfcc0bfc513)
 
 ## Simon:
-Added the Simon-CSS to https://simon.dailydevotional.click
+Added the Simon-JavaScript to https://simon.dailydevotional.click
+
+## Startup JavaScript
+Added the login button taking you to the devotional page
+Made it so you can save your religion preferences in local storage
+Made it so every night at midnight the quote/picture/citation is changed to another one in the list build in JavaScript
+Added support for the Help Queue
 
 ## Using Required Technologies:
 I am going to use the required technologies in the following ways.
