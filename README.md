@@ -10,7 +10,10 @@ Daily Devotional will have a list of all of the religions that it offers info fr
 ![image](https://github.com/mdf53/startup/assets/102641657/434e3bf2-3897-4a5c-a4e2-5bfcc0bfc513)
 
 ## Simon:
-Added the Simon-JavaScript to https://simon.dailydevotional.click
+Added the Simon-Service to https://simon.dailydevotional.click
+
+## Startup Service:
+
 
 ## Startup JavaScript
 Added the login button taking you to the devotional page
