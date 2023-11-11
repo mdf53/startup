@@ -13,7 +13,8 @@ Daily Devotional will have a list of all of the religions that it offers info fr
 Added the Simon-Service to https://simon.dailydevotional.click
 
 ## Startup Service:
-
+1: Setup web service with express and made sure the Express server runs and I can access the necessary files.
+2: 
 
 ## Startup JavaScript
 Added the login button taking you to the devotional page
