@@ -14,16 +14,11 @@ app.use(express.static('public'));
 const apiRouter = express.Router();
 app.use(`/api`, apiRouter);
 
-// GetScores
-apiRouter.get('/scores', (_req, res) => {
-  res.send(scores);
-});
-
-// SubmitScore
-apiRouter.post('/score', (req, res) => {
-  scores = updateScores(req.body, scores);
-  res.send(scores);
-});
+// Define your API endpoints here
+// For example, a sample endpoint that returns a message
+app.get('/api/hello', (req, res) => {
+    res.json({ message: 'Hello from the API!' });
+  });
 
 // Return the application's default page if the path is unknown
 app.use((_req, res) => {
