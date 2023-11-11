@@ -6,7 +6,7 @@ const dailyContent = [
         quote: "And it came to pass that I, Nephi, said unto my father: I will go and do the things which the Lord hath commanded, for I know that the Lord giveth no commandments unto the children of men, save he shall prepare a way for them that they may accomplish the thing which he commandeth them.",
         citation: "The Book of Mormon: 1 Nephi 3:7",
         religion: "Church of Jesus Christ of Latter-Day Saints",
-        image: "LDS.png"
+        image: "images/LDS.png"
 
     },
     {
@@ -14,7 +14,7 @@ const dailyContent = [
       quote: "No one will reap except what they sow.",
       citation: "Quran 6:164",
       religion: "Islam",
-      image: "islam.png"
+      image: "images/islam.png"
 
     },
     {
@@ -22,7 +22,7 @@ const dailyContent = [
         quote: "Let all your things be done with charity",
         citation: "The Bible: 1 Corinthians 16:14",
         religion: "Christianity",
-        image: "christianity.png"
+        image: "images/christianity.png"
   
       },
     
@@ -30,7 +30,7 @@ const dailyContent = [
         quote: "But seek ye first the kingdom of God, and his righteousness; and all these things shall be added unto you.",
         citation: "The Bible: Matthew 6:33",
         religion: "Christianity",
-        image: "christianity.png"
+        image: "images/christianity.png"
 
     }
     // Add objects for subsequent days here
