@@ -14,11 +14,26 @@ app.use(express.static('public'));
 const apiRouter = express.Router();
 app.use(`/api`, apiRouter);
 
-// Define your API endpoints here
-// For example, a sample endpoint that returns a message
-app.get('/api/hello', (req, res) => {
-    res.json({ message: 'Hello from the API!' });
-  });
+app.post('/store-religions', (req, res) => {
+  const selectedReligions = req.body.selectedReligions;
+
+  // Perform logic to store selected religions (for example, store in-memory)
+  const storedReligions = []; // In-memory storage for simplicity
+  storedReligions.push(...selectedReligions);
+
+  // Send a response back to the client
+  res.json({ message: 'Selected religions stored successfully', storedReligions });
+});
+
+// GetReligions
+apiRouter.get('/get-stored-religions', (_req, res) => {
+  // Perform logic to retrieve stored religions (for example, from in-memory storage)
+  const storedReligions = []; 
+  res.json({ storedReligions });
+});
+
+//
+
 
 // Return the application's default page if the path is unknown
 app.use((_req, res) => {
