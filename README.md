@@ -15,6 +15,7 @@ Added the Simon-Service to https://simon.dailydevotional.click
 ## Startup Service:
 1: Setup web service with express and made sure the Express server runs and I can access the necessary files.
 2: Reformatted folders and some lines of code to ensure that the website runs properly on the Express server.
+3: Edited the JS code so that it would load and save which checkboxes were checked to the API
 
 ## Startup JavaScript
 Added the login button taking you to the devotional page
