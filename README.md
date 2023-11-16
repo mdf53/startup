@@ -12,6 +12,9 @@ Daily Devotional will have a list of all of the religions that it offers info fr
 ## Simon:
 Added the Simon-DB to https://simon.dailydevotional.click
 
+## Startup Database:
+
+
 ## Startup Service:
 1: Setup web service with express and made sure the Express server runs and I can access the necessary files.
 2: Reformatted folders and some lines of code to ensure that the website runs properly on the Express server.
