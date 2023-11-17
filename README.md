@@ -13,6 +13,7 @@ Daily Devotional will have a list of all of the religions that it offers info fr
 Added the Simon-DB to https://simon.dailydevotional.click
 
 ## Startup Database:
+Setup acces to a MongoDB in the database.js file.
 
 
 ## Startup Service:
