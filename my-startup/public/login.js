@@ -5,7 +5,7 @@ function registerUser() {
   const password = document.getElementById('password').value;
 
    // Retrieve existing user credentials or initialize an empty array
-  const existingUserCredentials = JSON.parse(localStorage.getItem('userCredentials')) || [];
+  let existingUserCredentials = JSON.parse(localStorage.getItem('userCredentials')) || [];
 
   // Check if the username already exists
   if (Array.isArray(existingUserCredentials) && existingUserCredentials.some(user => user.username === username)) {

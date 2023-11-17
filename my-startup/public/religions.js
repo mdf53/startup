@@ -1,101 +1,57 @@
+// Load the checkboxes based on the currently logged-in user
+function loadPage() {
+  const loggedInUser = localStorage.getItem('loggedInUser');
+  const userData = getUserByUsername(loggedInUser);
 
-// //Add the ability to save Which religions you want to see
-//Function to save the checkbox state in local storage
-function saveCheckboxState(checkboxId) {
-    const checkbox = document.getElementById(checkboxId);
-    localStorage.setItem(checkboxId, checkbox.checked);
-}
-
-//Function to load and set the checkbox state from local storage
-function loadCheckboxState(checkboxId) {
-    const checkbox = document.getElementById(checkboxId);
-    const savedState = localStorage.getItem(checkboxId);
-    
-    if (savedState === "true") {
-        checkbox.checked = true;
-    } else {
-        checkbox.checked = false;
-    }
-}
-const checkboxes = [];
-function loadCheckboxes(username){
-  const users = JSON.parse(localStorage.getItem('users')) || [];
-  const user = users.find(user => user.username === username);
-  checkboxes = user.checkboxes;
-  if(checkboxes === null){
-    checkboxes = user.checkboxes;
+  if (userData) {
+    // Assuming checkboxes have ids like 'item1', 'item2', etc.
+    document.getElementById('Christianity').checked = userData.item1 || false;
+    document.getElementById('LDS').checked = userData.item2 || false;
+    document.getElementById('Islam').checked = userData.item3 || false;
+    document.getElementById('Hinduism').checked = userData.item4 || false;
+    // Add more lines for additional checkboxes
   }
-  
 }
 
+// Update the checkboxes and save the data when the form is submitted
+function submitReligionsForm() {
+  const loggedInUser = localStorage.getItem('loggedInUser');
+  const item1 = document.getElementById('Christianity').checked;
+  const item2 = document.getElementById('LDS').checked;
+  const item3 = document.getElementById('Islam').checked;
+  const item4 = document.getElementById('Hinduism').checked;
+
+  // Add more lines for additional checkboxes
+  let existingUserData = JSON.parse(localStorage.getItem('userData')) || [];
 
 
-// // Attach event listeners to the checkboxes
-// checkboxes.forEach((checkbox) => {
-//     checkbox.addEventListener('change', function() {
-//         saveCheckboxState(checkbox.id);
-//     });
-// });
 
+  const newUserData = {
+    username: loggedInUser,
+    item1: item1,
+    item2: item2,
+    item3: item3,
+    item4: item4
+    // Add more properties for additional checkboxes
+  };
 
+  existingUserData.push(newUserData);
 
-// // Load the initial state of checkboxes
-// async function loadReligions() {
-    
-//     // Fetch stored religions from the API
-//     try{
-//     // fetch('/get-stored-religions')
-//     //   .then(response => response.json())
-//     //   .then(data => {
-//     //     // Check if storedReligions property exists in the response
-//     //     const storedReligions = data.storedReligions || [];
-  
-//     //     // Update checkboxes based on stored data
-//     //     storedReligions.forEach(religion => {
-//     //       const checkbox = document.getElementById(`${religion}Checkbox`);
-//     //       if (checkbox) {
-//     //         checkbox.checked = true;
-//     //       }
-//     //     });
-//     // })
-//     //   .catch(error => console.error('Error fetching stored religions:', error));
-//     const religions = await fetch('stored-religions');
-//     religions.forEach((checkbox) => {
-//         loadCheckboxState(checkbox.id);
-//     });
-//     }
-//     catch{
-//         console.log('Failed to load API checkboxes.');
-//         checkboxes.forEach((checkbox) => {
-//             loadCheckboxState(checkbox.id);
-//         });
-  
-//       }  
-//     };
+  // Save the updated data to local storage
+  localStorage.setItem('userData', JSON.stringify(existingUserData));
 
-  
-// function submitReligionsForm() {
-//     const checkboxes = document.querySelectorAll('input[type="checkbox"]');
-//     const selectedReligions = Array.from(checkboxes)
-//       .filter(checkbox => checkbox.checked)
-//       .map(checkbox => checkbox.id.replace("Checkbox", ""));
-  
-//     // Send the selected religions to your backend API
-//     fetch('/store-religions', {
-//       method: 'POST',
-//       headers: {
-//         'Content-Type': 'application/json',
-//       },
-//       body: JSON.stringify({ selectedReligions }),
-//     })
-//       .then(response => response.json())
-//       .then(data => {
-//         console.log(data.message);
-//         // Handle any additional logic after storing the selected religions
-//       })
-//       .catch(error => console.error('Error:', error));
-//   }
-  
-// // export {checkboxes};
+  console.log('User data updated:', newUserData);
+}
+
+// Helper function to get user data by username
+function getUserByUsername(username) {
+  const userD = JSON.parse(localStorage.getItem('userData')) || [];
+
+  // Find the user in the array by username
+  return userD.find(user => user.username === username) || null;
+}
+
+// Call loadPage() when the page is loaded
+document.addEventListener('DOMContentLoaded', loadPage);
 
 
