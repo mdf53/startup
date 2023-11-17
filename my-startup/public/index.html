@@ -18,6 +18,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Daily Devotional</title>
     <link rel="icon" href="favicon.ico" />
+
+    <script src="login.js" defer></script>
+    
   </head>
   <body>
     <!-- Use header, main, and footer elements to give semantic structure -->
@@ -43,9 +46,18 @@
       <h1>Welcome</h1>
       <p>Login to save which religions you would like to see</p>
       <form method="get" action="devo.html">
-        <label for="name">Name</label>
-        <input type="text" id="name" placeholder="Your name here" />
-        <button class="btn btn-primary" onclick="login()">Login</button>      </form>
+        <label for="name">Username</label>
+        <input type="text" id="username" placeholder="Username" />
+      </form>
+      <form method="get" action="devo.html">
+        <label for="password">Password</label>
+        <input type="text" id="password" placeholder="Password" />
+      </form>
+
+      <span>
+        <button class="btn btn-primary" onclick="loginUser()">  Login    </button>
+      <button class="btn btn-primary" onclick="registerUser()">Register</button>
+      </span>
     </main>
 
     <footer>

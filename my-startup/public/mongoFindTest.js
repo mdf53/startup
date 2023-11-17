@@ -3,7 +3,7 @@ const { MongoClient } = require('mongodb');
 const dbName = 'bnb';
 const colName = 'listings';
 
-const url = "mongodb+srv://CS260:CS260Password@cluster0.r0w45tj.mongodb.net";
+const url = "mongodb+srv://<username>:<password>@cluster0.r0w45tj.mongodb.net";
 
 async function main() {
     const client = new MongoClient(url);
