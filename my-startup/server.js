@@ -17,34 +17,54 @@ app.use(express.static('public'));
 const apiRouter = express.Router();
 app.use(`/api`, apiRouter);
 
-app.post('/store-religions', async (req, res) => {
-  const selectedReligions = req.body.selectedReligions;
+app.post('/api/store-user-credentials', async (req, res) => {
+    console.log('Reached the server route');
+    const { username, password } = req.body;
+  
+    try {
+      // Perform logic to store user credentials in MongoDB
+      const result = await db.collection('userCredentials').insertOne({ username, password });
+  
+      // Send a response back to the client
+      res.header('Content-Type', 'application/json').json({
+        success: true,
+        message: 'User credentials stored successfully',
+        storedUser: { username, password }
+      });
+        } catch (error) {
+      console.error('Error storing user credentials:', error);
+      res.status(500).json({ error: 'Internal Server Error' });
+    }
+  });
 
-  try {
-    // Perform logic to store selected religions in MongoDB
-    const result = await db.collection('selectedReligions').insertOne({ religions: selectedReligions });
-
-    // Send a response back to the client
-    res.json({ message: 'Selected religions stored successfully', storedReligions: selectedReligions });
-  } catch (error) {
-    console.error('Error storing religions:', error);
-    res.status(500).json({ error: 'Internal Server Error' });
-  }
-});
+  app.post('/update-user-data', async (req, res) => {
+    const { username, userData } = req.body;
+  
+    try {
+      // Perform logic to update user data in MongoDB
+      const result = await db.collection('userData').updateOne({ username }, { $set: { ...userData } }, { upsert: true });
+  
+      // Send a response back to the client
+      res.json({ message: 'User data updated successfully', updatedUser: { username, ...userData } });
+    } catch (error) {
+      console.error('Error updating user data:', error);
+      res.status(500).json({ error: 'Internal Server Error' });
+    }
+  });
 
 // GetReligions
-apiRouter.get('/get-stored-religions', async (_req, res) => {
-  try {
-    // Perform logic to retrieve stored religions from MongoDB
-    const storedReligionsEntry = await db.collection('selectedReligions').findOne();
-    const storedReligions = storedReligionsEntry ? storedReligionsEntry.religions : [];
+// apiRouter.get('/get-stored-religions', async (_req, res) => {
+//   try {
+//     // Perform logic to retrieve stored religions from MongoDB
+//     const storedReligionsEntry = await db.collection('selectedReligions').findOne();
+//     const storedReligions = storedReligionsEntry ? storedReligionsEntry.religions : [];
 
-    res.json({ storedReligions });
-  } catch (error) {
-    console.error('Error retrieving religions:', error);
-    res.status(500).json({ error: 'Internal Server Error' });
-  }
-});
+//     res.json({ storedReligions });
+//   } catch (error) {
+//     console.error('Error retrieving religions:', error);
+//     res.status(500).json({ error: 'Internal Server Error' });
+//   }
+// });
 
 // Return the application's default page if the path is unknown
 app.use((_req, res) => {

@@ -54,4 +54,60 @@ function getUserByUsername(username) {
 // Call loadPage() when the page is loaded
 document.addEventListener('DOMContentLoaded', loadPage);
 
+//new stuff from chat
+// Import necessary modules
+// ...
+
+// Function to update user data (checkboxes) on the server
+function updateUserDataOnServer(username, userData) {
+  // Send a POST request to your server endpoint to update user data
+  fetch('/update-user-data', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({ username, userData }),
+  })
+    .then(response => response.json())
+    .then(data => {
+      console.log('User data updated on the server:', data);
+    })
+    .catch(error => {
+      console.error('Error updating user data on the server:', error);
+    });
+}
+
+// Function to save user data (checkboxes) to both local storage and the server
+function saveUserData(username, userData) {
+  // Save user data to local storage
+  saveUserDataToLocal(username, userData);
+
+  // Save user data to the server
+  updateUserDataOnServer(username, userData);
+
+  console.log('User data saved:', { username, userData });
+  // Perform additional logic if needed
+}
+
+// Function to save user data (checkboxes) to local storage
+function saveUserDataToLocal(username, userData) {
+  // Retrieve existing user data or initialize an empty array
+  const existingUserData = JSON.parse(localStorage.getItem('userData')) || [];
+
+  // Find the index of the user data in the array by username
+  const index = existingUserData.findIndex(data => data.username === username);
+
+  // If the user data exists, update it; otherwise, add a new entry
+  if (index !== -1) {
+    existingUserData[index] = { username, ...userData };
+  } else {
+    existingUserData.push({ username, ...userData });
+  }
+
+  // Save the updated array to local storage
+  localStorage.setItem('userData', JSON.stringify(existingUserData));
+}
+
+// Other religions.js functions...
+// ...
 
