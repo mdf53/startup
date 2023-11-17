@@ -14,6 +14,7 @@ Added the Simon-DB to https://simon.dailydevotional.click
 
 ## Startup Database:
 Setup acces to a MongoDB in the database.js file.
+Redid setup of the JavaScript and Services to better match how I wanted to save things in the database.
 
 
 ## Startup Service:
