@@ -51,29 +51,6 @@ function getUserByUsername(username) {
   return userD.find(user => user.username === username) || null;
 }
 
-
-//new stuff from chat
-// Import necessary modules
-// ...
-
-// Function to update user data (checkboxes) on the server
-// function updateUserDataOnServer(username, userData) {
-//   // Send a POST request to your server endpoint to update user data
-//   fetch('/update-user-data', {
-//     method: 'POST',
-//     headers: {
-//       'Content-Type': 'application/json',
-//     },
-//     body: JSON.stringify({ username, userData }),
-//   })
-//     .then(response => response.json())
-//     .then(data => {
-//       console.log('User data updated on the server:', data);
-//     })
-//     .catch(error => {
-//       console.error('Error updating user data on the server:', error);
-//     });
-// }
 // Function to update user data (checkboxes) on the server
 function updateUserDataOnServer(username, userData) {
   // Send a POST request to your server endpoint to update user data
