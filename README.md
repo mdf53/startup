@@ -12,6 +12,10 @@ Daily Devotional will have a list of all of the religions that it offers info fr
 ## Simon:
 Added the Simon-DB to https://simon.dailydevotional.click
 
+## Startup Login:
+Most of the implementation was done in database.
+Changed the code so it would compare login to users in the database instead of the local storage.
+
 ## Startup Database:
 Setup acces to a MongoDB in the database.js file.
 Redid setup of the JavaScript and Services to better match how I wanted to save things in the database.
