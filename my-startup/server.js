@@ -140,19 +140,27 @@ app.post('/api/store-user-credentials', async (req, res) => {
     }
   });
 
-// GetReligions
-// apiRouter.get('/get-stored-religions', async (_req, res) => {
-//   try {
-//     // Perform logic to retrieve stored religions from MongoDB
-//     const storedReligionsEntry = await db.collection('selectedReligions').findOne();
-//     const storedReligions = storedReligionsEntry ? storedReligionsEntry.religions : [];
+  // Get user data by username
+apiRouter.get('/get-user-by-username', async (req, res) => {
+  const { username } = req.query;
 
-//     res.json({ storedReligions });
-//   } catch (error) {
-//     console.error('Error retrieving religions:', error);
-//     res.status(500).json({ error: 'Internal Server Error' });
-//   }
-// });
+  try {
+    // Perform logic to retrieve user data from MongoDB
+    const userCredentials = await db.collection('userCredentials').findOne({ username });
+
+    if (!userCredentials) {
+      // If user not found, respond with a 404 status
+      res.status(404).json({ error: 'User not found' });
+      return;
+    }
+
+    // Respond with the user data
+    res.json(userCredentials);
+  } catch (error) {
+    console.error('Error retrieving user data:', error);
+    res.status(500).json({ error: 'Internal Server Error' });
+  }
+});
 
 // Return the application's default page if the path is unknown
 app.use((_req, res) => {
