@@ -1,29 +1,37 @@
-//new function for startup login
 async function registerUser() {
-  // Get the username and password from the input fields
+  console.log('In registerUser()');
+
   const username = document.getElementById('username').value;
   const password = document.getElementById('password').value;
 
-  // Check if the user already exists in the database
-  const existingUser = await getUserByUsername(username);
-
-  if (existingUser) {
-    console.log("User already exists.");
-    return;
-  }
-
-  // If the user doesn't exist, proceed with registration logic
   try {
-    // Perform registration logic
-    // ...
+    // Check if the user already exists
+    const existingUser = await getUserByUsername(username);
 
-    console.log('User registered:', { username, password });
+    if (existingUser && existingUser.username === username) {
+      console.log("User already exists.");
+      return;
+    }
 
-    // Perform additional actions after registration if needed
+    // If the user doesn't exist, proceed with registration
+    const userCredentials = {
+      username: username,
+      password: password,
+    };
+
+    // Save user credentials to the server and local storage
+    await saveUserCredentialsToServer(userCredentials);
+    localStorage.setItem('loggedInUser', username);
+
+    console.log('User registered:', userCredentials);
+
+    // Perform additional registration logic if needed
   } catch (error) {
-    console.error('Error registering user:', error);
+    console.error('Error during registration:', error);
+    // Handle the error, such as displaying an error message to the user
   }
 }
+
 
 //new function for startup login
 async function loginUser() {
@@ -61,25 +69,24 @@ function saveUserCredentialsToLocal(username, password) {
   localStorage.setItem('userCredentials', JSON.stringify(userCredentials));
 }
 
-function saveUserCredentialsToServer(username, password) {
-  // Send a POST request to your server endpoint to store user credentials
-  fetch('/api/store-user-credentials', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify({ username, password }),
-  })
-    .then(response => response.json())
-    .then(data => {
-      console.log('User credentials stored on the server:', data);
-    })
-    .catch(error => {
-      console.error('Error storing user credentials on the server:', error);
+async function saveUserCredentialsToServer(userCredentials) {
+  try {
+    const response = await fetch('/api/store-user-credentials', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(userCredentials),
     });
+
+    const data = await response.json();
+    console.log('Response from server:', data);
+  } catch (error) {
+    console.error('Error saving user credentials to the server:', error);
+    // Handle the error, such as displaying an error message to the user
+  }
 }
 
-//new function for startup login
 async function getUserByUsername(username) {
   try {
     // Send a GET request to your server endpoint to retrieve user data
@@ -97,6 +104,7 @@ async function getUserByUsername(username) {
     return null;
   }
 }
+
 
 function saveUserToLocalstorage(user) {
   const users = JSON.parse(localStorage.getItem('users')) || [];

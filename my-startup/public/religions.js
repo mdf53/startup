@@ -1,16 +1,24 @@
 // Load the checkboxes based on the currently logged-in user
 function loadPage() {
   const loggedInUser = localStorage.getItem('loggedInUser');
-  const userData = getUserByUsername(loggedInUser);
 
-  if (userData) {
-    // Assuming checkboxes have ids like 'item1', 'item2', etc.
-    document.getElementById('Christianity').checked = userData.item1 || false;
-    document.getElementById('LDS').checked = userData.item2 || false;
-    document.getElementById('Islam').checked = userData.item3 || false;
-    document.getElementById('Hinduism').checked = userData.item4 || false;
-    // Add more lines for additional checkboxes
-  }
+  // Get user data from the server
+  getUserByUsername(loggedInUser)
+    .then(userData => {
+      console.log('Retrieved user data in loadPage:', userData);
+
+      if (userData) {
+        // Assuming checkboxes have ids like 'Christianity', 'LDS', etc.
+        document.getElementById('Christianity').checked = userData.Christianity || false;
+        document.getElementById('LDS').checked = userData.LDS || false;
+        document.getElementById('Islam').checked = userData.Islam || false;
+        document.getElementById('Hinduism').checked = userData.Hinduism || false;
+        // Add more lines for additional checkboxes
+      }
+    })
+    .catch(error => {
+      console.error('Error loading user data:', error);
+    });
 }
 
 // Update the checkboxes and save the data when the form is submitted
@@ -44,11 +52,21 @@ function submitReligionsForm() {
 }
 
 // Helper function to get user data by username
-function getUserByUsername(username) {
-  const userD = JSON.parse(localStorage.getItem('userData')) || [];
+async function getUserByUsername(username) {
+  try {
+    // Send a GET request to your server endpoint to retrieve user data
+    const response = await fetch(`/api/get-userData-by-username?username=${encodeURIComponent(username)}`);    
+    if (!response.ok) {
+      // Handle the error if the response status is not OK
+      throw new Error(`Failed to get user data: ${response.statusText}`);
+    }
 
-  // Find the user in the array by username
-  return userD.find(user => user.username === username) || null;
+    const userData = await response.json();
+    return userData;
+  } catch (error) {
+    console.error('Error getting user data from the server:', error);
+    return null;
+  }
 }
 
 // Function to update user data (checkboxes) on the server

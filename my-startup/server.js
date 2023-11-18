@@ -162,6 +162,25 @@ apiRouter.get('/get-user-by-username', async (req, res) => {
   }
 });
 
+apiRouter.get('/get-userData-by-username', async (req, res) => {  const { username } = req.query;
+  try {
+    // Perform logic to retrieve user data from MongoDB
+    const userData = await db.collection('userData').findOne({ username });
+
+    if (!userData) {
+      // If user not found, respond with a 404 status
+      res.status(404).json({ error: 'User not found' });
+      return;
+    }
+
+    // Respond with the user data
+    res.json(userData);
+  } catch (error) {
+    console.error('Error retrieving user data:', error);
+    res.status(500).json({ error: 'Internal Server Error' });
+  }
+});
+
 // Return the application's default page if the path is unknown
 app.use((_req, res) => {
   res.sendFile('index.html', { root: 'public' });
