@@ -16,31 +16,31 @@ function loadPage() {
 // Update the checkboxes and save the data when the form is submitted
 function submitReligionsForm() {
   const loggedInUser = localStorage.getItem('loggedInUser');
-  const item1 = document.getElementById('Christianity').checked;
-  const item2 = document.getElementById('LDS').checked;
-  const item3 = document.getElementById('Islam').checked;
-  const item4 = document.getElementById('Hinduism').checked;
+  const Christianity = document.getElementById('Christianity').checked;
+  const LDS = document.getElementById('LDS').checked;
+  const Islam = document.getElementById('Islam').checked;
+  const Hinduism = document.getElementById('Hinduism').checked;
 
   // Add more lines for additional checkboxes
   let existingUserData = JSON.parse(localStorage.getItem('userData')) || [];
 
 
 
-  const newUserData = {
+  let newUserData = {
     username: loggedInUser,
-    item1: item1,
-    item2: item2,
-    item3: item3,
-    item4: item4
+    Christianity: Christianity,
+    LDS: LDS,
+    Islam: Islam,
+    Hinduism: Hinduism
     // Add more properties for additional checkboxes
   };
 
-  existingUserData.push(newUserData);
+  // existingUserData.push(newUserData);
 
-  // Save the updated data to local storage
-  localStorage.setItem('userData', JSON.stringify(existingUserData));
+  // // Save the updated data to local storage
+  // localStorage.setItem('userData', JSON.stringify(existingUserData));
+  saveUserData(loggedInUser, newUserData);
 
-  console.log('User data updated:', newUserData);
 }
 
 // Helper function to get user data by username
@@ -51,17 +51,34 @@ function getUserByUsername(username) {
   return userD.find(user => user.username === username) || null;
 }
 
-// Call loadPage() when the page is loaded
-document.addEventListener('DOMContentLoaded', loadPage);
 
 //new stuff from chat
 // Import necessary modules
 // ...
 
 // Function to update user data (checkboxes) on the server
+// function updateUserDataOnServer(username, userData) {
+//   // Send a POST request to your server endpoint to update user data
+//   fetch('/update-user-data', {
+//     method: 'POST',
+//     headers: {
+//       'Content-Type': 'application/json',
+//     },
+//     body: JSON.stringify({ username, userData }),
+//   })
+//     .then(response => response.json())
+//     .then(data => {
+//       console.log('User data updated on the server:', data);
+//     })
+//     .catch(error => {
+//       console.error('Error updating user data on the server:', error);
+//     });
+// }
+// Function to update user data (checkboxes) on the server
 function updateUserDataOnServer(username, userData) {
   // Send a POST request to your server endpoint to update user data
-  fetch('/update-user-data', {
+  console.log("In update user data on server.");
+  fetch('/api/update-user-data', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
@@ -85,13 +102,11 @@ function saveUserData(username, userData) {
   // Save user data to the server
   updateUserDataOnServer(username, userData);
 
-  console.log('User data saved:', { username, userData });
   // Perform additional logic if needed
 }
 
 // Function to save user data (checkboxes) to local storage
 function saveUserDataToLocal(username, userData) {
-  // Retrieve existing user data or initialize an empty array
   const existingUserData = JSON.parse(localStorage.getItem('userData')) || [];
 
   // Find the index of the user data in the array by username
@@ -99,15 +114,20 @@ function saveUserDataToLocal(username, userData) {
 
   // If the user data exists, update it; otherwise, add a new entry
   if (index !== -1) {
-    existingUserData[index] = { username, ...userData };
+    // Update the existing entry
+    existingUserData[index] = Object.assign(existingUserData[index], { ...userData });
   } else {
+    // Add a new entry
     existingUserData.push({ username, ...userData });
   }
 
   // Save the updated array to local storage
   localStorage.setItem('userData', JSON.stringify(existingUserData));
+  console.log('User data saved locally:', { username, userData });
+
 }
 
-// Other religions.js functions...
-// ...
+// Call loadPage() when the page is loaded
+document.addEventListener('DOMContentLoaded', loadPage);
+
 
