@@ -56,14 +56,21 @@
     <br />
     <a href="https://github.com/mdf53/startup.git">GitHub</a>
     <br />
-    <button id="liveHelpButton">Live Help Support</button>    <div id="chatBox" style="display: none">
-      <!-- Chat box content goes here -->
+    <button id="open-chat-button" onclick="toggleChat()">Help Chat</button>
+    <div id="chat-box" style="display: none">
+      <div id="chat-display"></div>
+      <div id="input-container">
+          <input type="text" id="message-input" placeholder="Type your message...">
+          <button onclick="sendMessage()">Send</button>
+      </div>
+  </div>
   </div>
   
   </footer>
   <script type = "module" src="religions.js"></script>
   <script type = "module" src="devo.js"></script>
   <script type = "module" src="help.js"></script>
+  <script src="chat.js"></script>
   <script>
     // Call the updateDailyText function initially when the page loads
   </script>
