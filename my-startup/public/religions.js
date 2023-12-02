@@ -124,5 +124,3 @@ function saveUserDataToLocal(username, userData) {
 
 // Call loadPage() when the page is loaded
 document.addEventListener('DOMContentLoaded', loadPage);
-
-

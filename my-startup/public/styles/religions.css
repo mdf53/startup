@@ -39,8 +39,8 @@ body {
   
   /* Button styles */
   button {
-    color: black;
-    background-color: blanchedalmond;
+    color: blanchedalmond;
+    background-color: darkslategrey;
   }
   
   /* Menu styles */
@@ -60,6 +60,34 @@ body {
     padding: 0 0.3em;
   }
   
+  #chat-box {
+    max-width: 400px;
+    margin: 20px auto;
+    border: 1px solid #ccc;
+    padding: 10px;
+}
+
+#chat-display {
+    height: 200px;
+    overflow-y: scroll;
+    border-bottom: 1px solid #ccc;
+}
+
+#input-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+#message-input {
+    flex: 1;
+    padding: 5px;
+}
+
+button {
+    padding: 5px 10px;
+    cursor: pointer;
+}
   /* Add a border around checkboxes within the fieldset */
   fieldset input[type="checkbox"] {
     border: 2px solid #333;

@@ -19,12 +19,23 @@ async function registerUser() {
       password: password,
     };
 
+    const newUserData = {
+      username: username,
+      Christianity: checked = false,
+      LDS: checked = false,
+      Islam: checked = false,
+      Hinduism: checked = false
+    }
+
     // Save user credentials to the server and local storage
     await saveUserCredentialsToServer(userCredentials);
+    await updateUserDataOnServer(username, newUserData);
+
     localStorage.setItem('loggedInUser', username);
 
-    console.log('User registered:', userCredentials);
 
+    console.log('User registered:', userCredentials);
+    loginUser();
     // Perform additional registration logic if needed
   } catch (error) {
     console.error('Error during registration:', error);
@@ -94,7 +105,8 @@ async function getUserByUsername(username) {
     
     if (!response.ok) {
       // Handle the error if the response status is not OK
-      throw new Error(`Failed to get user data: ${response.statusText}`);
+      // throw new Error(`Failed to get user data: ${response.statusText}`);
+      return null;
     }
 
     const userData = await response.json();
@@ -116,4 +128,23 @@ function saveUserToLocalstorage(user) {
 function User(username, password) {
   this.username = username;
   this.password = password;
+}
+
+function updateUserDataOnServer(username, userData) {
+  // Send a POST request to your server endpoint to update user data
+  console.log("In update user data on server.");
+  fetch('/api/update-user-data', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({ username, userData }),
+  })
+    .then(response => response.json())
+    .then(data => {
+      console.log('User data updated on the server:', data);
+    })
+    .catch(error => {
+      console.error('Error updating user data on the server:', error);
+    });
 }
