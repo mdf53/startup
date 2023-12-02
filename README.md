@@ -13,7 +13,7 @@ Daily Devotional will have a list of all of the religions that it offers info fr
 Added the Simon-WebSocket to https://simon.dailydevotional.click
 
 ## Startup Websocket
-
+Added in the Chat/Help feature at the bottom of the website.
 
 ## Startup Login:
 Most of the implementation was done in database.
