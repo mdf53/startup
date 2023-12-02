@@ -1,4 +1,3 @@
-// Try 3 (from github before it broke.)
 const config = require('./dbConfig.json');
 const { MongoClient } = require('mongodb');
 
